@@ -33,7 +33,10 @@
       <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
         <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
-        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart" style="position: relative;">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
         <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
       </div>
 
@@ -85,12 +88,12 @@
 
   <!-- Section 2: Brand Story -->
   <section class="brand-story section-padding">
-    <div class="container flex wrap-md align-center gap-2 animate-on-scroll">
+    <div class="container flex wrap-md align-center animate-on-scroll" style="gap: 4rem;">
       <div style="flex:1;">
         <h2>How It Started</h2>
-        <p class="mt-4" style="color: #111; line-height: 1.8; font-size: 1.05rem;">Founded in 2026, Lumina began with a profound personal quest. Our founder, seeking balance in a chaotic modern world, discovered the grounding, transformative power of earth's ancient minerals. What started as a small personal collection quickly grew into a mission to share these high-frequency tools with others.</p>
-        <p class="mt-3" style="color: #111; line-height: 1.8; font-size: 1.05rem;">We traveled the globe, forging direct relationships with independent miners who prioritize the earth over profit. We learned that the energy of a crystal is directly tied to how it is extracted, which is why ethical sourcing became our absolute foundation.</p>
-        <p class="mt-3 mb-4" style="color: #111; line-height: 1.8; font-size: 1.05rem;">Today, Lumina stands at the intersection of natural power and modern luxury. We believe that true healing tools shouldn't just be effective—they should be breathtakingly beautiful. Welcome to your new sanctuary.</p>
+        <p class="mt-4" style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Founded in 2026, Lumina began with a profound personal quest. Our founder, seeking balance in a chaotic modern world, discovered the grounding, transformative power of earth's ancient minerals. What started as a small personal collection quickly grew into a mission to share these high-frequency tools with others.</p>
+        <p class="mt-3" style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">We traveled the globe, forging direct relationships with independent miners who prioritize the earth over profit. We learned that the energy of a crystal is directly tied to how it is extracted, which is why ethical sourcing became our absolute foundation.</p>
+        <p class="mt-3 mb-4" style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Today, Lumina stands at the intersection of natural power and modern luxury. We believe that true healing tools shouldn't just be effective—they should be breathtakingly beautiful. Welcome to your new sanctuary.</p>
       </div>
       <div style="flex:1; height: 100%;">
         <img src="assets/images/premium_crystal_altar.png" alt="Lumina Crystal Studio" style="width: 100%; height: 500px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
@@ -134,7 +137,7 @@
 
   <!-- Section 4: Meet The Founder -->
   <section class="meet-founder section-padding">
-    <div class="container flex wrap-md align-center gap-2 animate-on-scroll">
+    <div class="container flex wrap-md align-center animate-on-scroll" style="gap: 4rem;">
       <div style="flex:1; height: 100%;">
         <img src="assets/images/hero_crystals_lifestyle.png" alt="Emma Stone, Founder" style="width: 100%; height: 500px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
       </div>
@@ -162,7 +165,7 @@
     <div class="container animate-on-scroll">
       <h2 style="color: #ffffff;">Join Our Community</h2>
       <p style="margin: 1rem auto 2rem; max-width: 600px; color: rgba(255, 255, 255, 0.9);">Follow us on Instagram for daily inspiration, crystal drops, and behind-the-scenes content.</p>
-      <a href="#" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff;">@CrystalAndStone</a>
+      <a href="#" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff;">CrystalAndStone</a>
     </div>
   </section>
 

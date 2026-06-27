@@ -34,7 +34,10 @@
       <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
         <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
-        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart" style="position: relative;">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
         <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
       </div>
 
@@ -146,7 +149,7 @@
           <div class="desktop-sort-toolbar hidden-mobile">
             <p>Showing 1-18 of 54 products</p>
             <div class="sort-group">
-              <span class="mr-2">Sort By:</span>
+              <span style="margin-inline-end: 0.5rem;">Sort By:</span>
               <select class="premium-select">
                 <option>Featured</option>
                 <option>Price: Low to High</option>

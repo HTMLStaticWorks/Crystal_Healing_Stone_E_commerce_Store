@@ -33,7 +33,10 @@
       <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
         <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
-        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart" style="position: relative;">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
         <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
       </div>
 
@@ -85,9 +88,13 @@
   <section class="contact-split-layout section-padding">
     <div class="container flex wrap-md align-stretch animate-on-scroll" style="gap: 3rem;">
       
-      <!-- Left Side: Contact Cards Grid -->
-      <div style="flex:1; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; align-content: stretch;">
-        
+      <!-- Left Side: Contact Information -->
+      <div style="flex:1; display: flex; flex-direction: column; gap: 2rem;">
+        <div>
+          <h2 style="margin-bottom: 1rem;">Get In Touch</h2>
+          <p style="color: var(--text-muted); line-height: 1.6;">Whether you have a question about our crystals, need help with an order, or just want to say hello, we would love to hear from you. Reach out through any of the channels below.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; align-content: stretch;">
         <div class="crystal-card" style="padding: 2.5rem 1.5rem; text-align: center; display: flex; flex-direction: column; justify-content: center;">
           <i class="ph ph-envelope-simple" style="font-size: 2.5rem; color: var(--clr-primary);"></i>
           <h3 style="margin: 1rem 0; font-size: 1.3rem;">Email Us</h3>
@@ -116,6 +123,7 @@
           </div>
         </div>
 
+      </div>
       </div>
 
       <!-- Right Side: Contact Form -->

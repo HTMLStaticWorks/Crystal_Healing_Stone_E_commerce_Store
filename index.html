@@ -39,7 +39,10 @@
       <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
         <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
-        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart" style="position: relative;">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
         <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
       </div>
 
@@ -124,7 +127,9 @@
             <img src="assets/images/amethyst_cluster.png" alt="Amethyst Cluster">
           </div>
           <div class="card-body">
-            <h3>Raw Amethyst</h3>
+            <div style="min-height: 80px; display: flex; align-items: center; justify-content: center;">
+              <h3 style="margin: 0;">Raw Amethyst</h3>
+            </div>
             <p>Peace & Intuition</p>
             <a href="#" class="btn btn-outline">View Details</a>
           </div>
@@ -135,7 +140,9 @@
             <img src="assets/images/rose_quartz_collection.png" alt="Rose Quartz">
           </div>
           <div class="card-body">
-            <h3>Rose Quartz</h3>
+            <div style="min-height: 80px; display: flex; align-items: center; justify-content: center;">
+              <h3 style="margin: 0;">Rose Quartz</h3>
+            </div>
             <p>Unconditional Love</p>
             <a href="#" class="btn btn-outline">View Details</a>
           </div>
@@ -146,7 +153,9 @@
             <img src="assets/images/clear_quartz_point.png" alt="Clear Quartz Point">
           </div>
           <div class="card-body">
-            <h3>Clear Quartz</h3>
+            <div style="min-height: 80px; display: flex; align-items: center; justify-content: center;">
+              <h3 style="margin: 0;">Clear Quartz</h3>
+            </div>
             <p>Clarity & Focus</p>
             <a href="#" class="btn btn-outline">View Details</a>
           </div>
@@ -157,7 +166,9 @@
             <img src="assets/images/black_tourmaline_stone.png" alt="Black Tourmaline Stone">
           </div>
           <div class="card-body">
-            <h3>Black Tourmaline</h3>
+            <div style="min-height: 80px; display: flex; align-items: center; justify-content: center;">
+              <h3 style="margin: 0;">Black Tourmaline</h3>
+            </div>
             <p>Grounding & Protection</p>
             <a href="#" class="btn btn-outline">View Details</a>
           </div>
@@ -189,25 +200,25 @@
             <div class="intention-point ultimate-glass animate-on-scroll" style="transition-delay: 0.1s;">
               <h3 class="point-title">Love & Harmony</h3>
               <p class="point-desc">Attract deep connections, foster emotional balance, and open your heart chakra to unconditional love.</p>
-              <a href="shop.html?intention=love" class="point-link">Explore Love Stones <i class="ph ph-arrow-right"></i></a>
+              <a href="shop.html?intention=love" class="point-link">Explore Love Stones </a>
             </div>
             
             <div class="intention-point ultimate-glass animate-on-scroll" style="transition-delay: 0.2s;">
               <h3 class="point-title">Wealth & Success</h3>
               <p class="point-desc">Draw abundance, unlock your true potential, and manifest prosperity into your professional life.</p>
-              <a href="shop.html?intention=wealth" class="point-link">Explore Wealth Stones <i class="ph ph-arrow-right"></i></a>
+              <a href="shop.html?intention=wealth" class="point-link">Explore Wealth Stones </a>
             </div>
             
             <div class="intention-point ultimate-glass animate-on-scroll" style="transition-delay: 0.3s;">
               <h3 class="point-title">Protection & Grounding</h3>
               <p class="point-desc">Shield your aura from negative energy fields and tether your spirit firmly to the earth.</p>
-              <a href="shop.html?intention=protection" class="point-link">Explore Protection Stones <i class="ph ph-arrow-right"></i></a>
+              <a href="shop.html?intention=protection" class="point-link">Explore Protection Stones </a>
             </div>
             
             <div class="intention-point ultimate-glass animate-on-scroll" style="transition-delay: 0.4s;">
               <h3 class="point-title">Physical & Inner Healing</h3>
               <p class="point-desc">Restore physical vitality, soothe an anxious mind, and find profound inner peace.</p>
-              <a href="shop.html?intention=healing" class="point-link">Explore Healing Stones <i class="ph ph-arrow-right"></i></a>
+              <a href="shop.html?intention=healing" class="point-link">Explore Healing Stones </a>
             </div>
           </div>
         </div>
@@ -347,9 +358,9 @@
             Transform your space into a sanctuary. Our carefully paired crystal sets are designed by metaphysical experts to amplify your energy, clear blockages, and manifest your deepest desires.
           </p>
           <ul class="ritual-features">
-            <li><i class="ph ph-sparkle"></i> Expert Metaphysical Pairings</li>
-            <li><i class="ph ph-sparkle"></i> Rare, Ethically Sourced Stones</li>
-            <li><i class="ph ph-sparkle"></i> Comprehensive Energy Guides</li>
+            <li><i class="ph ph-sparkle"></i> <span>Expert Metaphysical Pairings</span></li>
+            <li><i class="ph ph-sparkle"></i> <span>Rare, Ethically Sourced Stones</span></li>
+            <li><i class="ph ph-sparkle"></i> <span>Comprehensive Energy Guides</span></li>
           </ul>
           <a href="shop.html" class="btn btn-primary ritual-btn mt-4">Shop Curated Sets</a>
         </div>

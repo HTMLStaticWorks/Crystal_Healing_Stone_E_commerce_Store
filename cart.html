@@ -62,11 +62,15 @@
       padding-top: 1rem;
       margin-top: 1rem;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
       .cart-layout {
         flex-direction: column;
+        align-items: stretch;
       }
       .cart-summary {
+        width: 100%;
+      }
+      .cart-items {
         width: 100%;
       }
       .cart-item-row {
@@ -124,7 +128,10 @@
       <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
         <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
-        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart" style="position: relative;">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
         <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
       </div>
 
@@ -225,8 +232,8 @@
             </div>
           </div>
           
-          <div style="margin-top: 2rem;">
-            <a href="shop.html" class="btn btn-outline"><i class="ph ph-arrow-left"></i> Continue Shopping</a>
+          <div style="margin-top: 2rem; text-align: center;">
+            <a href="shop.html" class="btn btn-outline"> Continue Shopping</a>
           </div>
         </div>
         

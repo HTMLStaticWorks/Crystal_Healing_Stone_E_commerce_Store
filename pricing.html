@@ -33,7 +33,10 @@
       <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
         <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
-        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart" style="position: relative;">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
         <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
       </div>
 
@@ -214,7 +217,7 @@
   
   <!-- Section 4: Corporate & Wellness Gifting (Merged) -->
   <section class="section-alt corporate-gifting section-padding" >
-    <div class="container flex wrap-md align-stretch gap-4 animate-on-scroll">
+    <div class="container flex wrap-md align-stretch animate-on-scroll" style="gap: 4rem;">
       
       <!-- Left Side: Image -->
       <div style="flex:1; min-height: 400px; display: flex;">
@@ -256,7 +259,7 @@
       <div class="gifting-accordion">
         <div class="accordion-item">
           <button class="accordion-toggle">
-            Can I include a personalized note?
+            <span dir="ltr">Can I include a personalized note?</span>
             <i class="ph ph-caret-down accordion-icon"></i>
           </button>
           <div class="accordion-content">
@@ -266,7 +269,7 @@
 
         <div class="accordion-item">
           <button class="accordion-toggle">
-            Do prices include shipping?
+            <span dir="ltr">Do prices include shipping?</span>
             <i class="ph ph-caret-down accordion-icon"></i>
           </button>
           <div class="accordion-content">
@@ -276,7 +279,7 @@
 
         <div class="accordion-item">
           <button class="accordion-toggle">
-            Can I mix and match bundles?
+            <span dir="ltr">Can I mix and match bundles?</span>
             <i class="ph ph-caret-down accordion-icon"></i>
           </button>
           <div class="accordion-content">
@@ -286,7 +289,7 @@
 
         <div class="accordion-item">
           <button class="accordion-toggle">
-            Are the receipts hidden in gift boxes?
+            <span dir="ltr">Are the receipts hidden in gift boxes?</span>
             <i class="ph ph-caret-down accordion-icon"></i>
           </button>
           <div class="accordion-content">

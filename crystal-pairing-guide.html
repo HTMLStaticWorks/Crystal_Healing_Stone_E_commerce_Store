@@ -33,7 +33,10 @@
       <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
         <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
-        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart" style="position: relative;">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
         <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
       </div>
 
@@ -93,8 +96,12 @@
           <div class="intention-icon">
             <i class="ph ph-heart text-primary"></i>
           </div>
-          <h3>Love & Relationships</h3>
-          <h4 class="pair-names">Rose Quartz + Amethyst</h4>
+          <div style="min-height: 60px; display: flex; align-items: center; justify-content: center;">
+            <h3>Love & Relationships</h3>
+          </div>
+          <div style="min-height: 50px; display: flex; align-items: center; justify-content: center;">
+            <h4 class="pair-names" style="margin: 0;">Rose Quartz + Amethyst</h4>
+          </div>
           <p>This powerful duo balances unconditional love with profound spiritual peace. While Rose Quartz opens the heart chakra to give and receive love, Amethyst provides emotional stability, ensuring relationships are rooted in deep understanding rather than codependency.</p>
         </div>
         
@@ -102,8 +109,12 @@
           <div class="intention-icon">
             <i class="ph ph-coins text-primary"></i>
           </div>
-          <h3>Wealth & Success</h3>
-          <h4 class="pair-names">Citrine + Pyrite</h4>
+          <div style="min-height: 60px; display: flex; align-items: center; justify-content: center;">
+            <h3>Wealth & Success</h3>
+          </div>
+          <div style="min-height: 50px; display: flex; align-items: center; justify-content: center;">
+            <h4 class="pair-names" style="margin: 0;">Citrine + Pyrite</h4>
+          </div>
           <p>The ultimate combination for manifesting abundance. Pyrite grounds your ambitious energy and shields against financial drain, while Citrine acts as a powerful magnet for wealth, stimulating your solar plexus to take decisive, prosperous action.</p>
         </div>
         
@@ -111,8 +122,12 @@
           <div class="intention-icon">
             <i class="ph ph-shield text-primary"></i>
           </div>
-          <h3>Protection</h3>
-          <h4 class="pair-names">Black Tourmaline + Selenite</h4>
+          <div style="min-height: 60px; display: flex; align-items: center; justify-content: center;">
+            <h3>Protection</h3>
+          </div>
+          <div style="min-height: 50px; display: flex; align-items: center; justify-content: center;">
+            <h4 class="pair-names" style="margin: 0;">Black Tourmaline + Selenite</h4>
+          </div>
           <p>A flawless energetic defense system. Black Tourmaline aggressively repels and absorbs negative energy from your environment, while Selenite acts as a continuous purifier, constantly cleansing the Tourmaline and keeping the surrounding space vibrating at a high frequency.</p>
         </div>
         
@@ -120,8 +135,12 @@
           <div class="intention-icon">
             <i class="ph ph-moon text-primary"></i>
           </div>
-          <h3>Better Sleep</h3>
-          <h4 class="pair-names">Lepidolite + Howlite</h4>
+          <div style="min-height: 60px; display: flex; align-items: center; justify-content: center;">
+            <h3>Better Sleep</h3>
+          </div>
+          <div style="min-height: 50px; display: flex; align-items: center; justify-content: center;">
+            <h4 class="pair-names" style="margin: 0;">Lepidolite + Howlite</h4>
+          </div>
           <p>The antidote for an overactive mind. Lepidolite contains natural lithium which deeply calms the nervous system, while Howlite absorbs stress, tension, and anxiety. Together, they create a tranquil energetic cocoon perfect for deep, restorative rest.</p>
         </div>
       </div>
@@ -154,22 +173,34 @@
       <div class="anti-pair-grid">
         <div class="anti-pair-card">
           <div class="alert-icon"><i class="ph ph-warning-circle"></i></div>
-          <h3>Carnelian + Amethyst</h3>
-          <p><strong>The Conflict:</strong> High Stimulation vs. Deep Relaxation.</p>
+          <div style="min-height: 60px; display: flex; align-items: center; justify-content: center;">
+            <h3 style="margin: 0;">Carnelian + Amethyst</h3>
+          </div>
+          <div style="min-height: 90px; display: flex; align-items: flex-start; justify-content: center; margin-top: 1rem;">
+            <p style="margin: 0; text-align: center;"><strong>The Conflict:</strong> High Stimulation vs. Deep Relaxation.</p>
+          </div>
           <p class="desc">Carnelian is a fiery stone that boosts energy, metabolism, and action. Amethyst is a tranquil stone meant for sleep and meditation. Pairing them sends wildly mixed signals to your nervous system, leading to energetic confusion and restlessness.</p>
         </div>
         
         <div class="anti-pair-card">
           <div class="alert-icon"><i class="ph ph-warning-circle"></i></div>
-          <h3>Clear Quartz + Malachite</h3>
-          <p><strong>The Conflict:</strong> Amplification of Toxicity.</p>
+          <div style="min-height: 60px; display: flex; align-items: center; justify-content: center;">
+            <h3 style="margin: 0;">Clear Quartz + Malachite</h3>
+          </div>
+          <div style="min-height: 90px; display: flex; align-items: flex-start; justify-content: center; margin-top: 1rem;">
+            <p style="margin: 0; text-align: center;"><strong>The Conflict:</strong> Amplification of Toxicity.</p>
+          </div>
           <p class="desc">Malachite is a powerful absorber of toxic energy and trauma. Clear Quartz is a master amplifier. If you pair them, the Quartz will aggressively amplify all the heavy, negative energy that the Malachite has absorbed, effectively radiating it back into your space.</p>
         </div>
         
         <div class="anti-pair-card">
           <div class="alert-icon"><i class="ph ph-warning-circle"></i></div>
-          <h3>Moldavite + Unakite</h3>
-          <p><strong>The Conflict:</strong> Upheaval vs. Grounded Growth.</p>
+          <div style="min-height: 60px; display: flex; align-items: center; justify-content: center;">
+            <h3 style="margin: 0;">Moldavite + Unakite</h3>
+          </div>
+          <div style="min-height: 90px; display: flex; align-items: flex-start; justify-content: center; margin-top: 1rem;">
+            <p style="margin: 0; text-align: center;"><strong>The Conflict:</strong> Upheaval vs. Grounded Growth.</p>
+          </div>
           <p class="desc">Moldavite induces rapid, unpredictable, and sometimes chaotic spiritual transformation. Unakite focuses on slow, steady, grounded emotional healing. Using them together creates a jarring push-and-pull dynamic that feels deeply ungrounding.</p>
         </div>
       </div>
