@@ -1,0 +1,42 @@
+/*
+ * Crystal & Healing Stone E-commerce Store
+ * Dark Mode Styles
+ */
+
+/* When dark-mode class is present on body or html */
+body.dark-mode {
+  --bg-color: var(--clr-dark-bg);
+  --text-color: var(--clr-dark-text);
+  --text-muted: var(--clr-white);
+  --card-bg: var(--clr-dark-card);
+  --clr-secondary: var(--clr-dark-card);
+  --navbar-bg: rgba(23, 24, 31, 0.95);
+  --border-color: #2F323D;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode .lead-text {
+  color: var(--clr-dark-text);
+}
+
+body.dark-mode p {
+  color: var(--clr-white);
+  opacity: 0.8;
+}
+
+body.dark-mode .btn-outline {
+  border-color: var(--clr-primary);
+  color: #ffffff;
+  background-color: transparent;
+}
+
+body.dark-mode .btn-outline:hover {
+  background-color: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: #ffffff;
+}

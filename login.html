@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Lumina</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body class="auth-page-centered">
+  
+  <!-- Floating Actions (Theme/RTL) -->
+  <div class="auth-floating-actions">
+    <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+    <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+  </div>
+
+  <div class="auth-card animate-on-scroll">
+    <div class="auth-header text-center-md" style="text-align: center; margin-bottom: 2rem;">
+      <a href="index.html" class="auth-logo"><i class="ph-fill ph-sparkle"></i> LUMINA</a>
+      <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.95rem;">Sign in to continue your journey.</p>
+    </div>
+    
+    <form class="auth-form">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" class="premium-select" placeholder="name@example.com" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-input-wrapper">
+          <input type="password" id="password" class="premium-select" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
+          <button type="button" class="icon-btn password-toggle-btn"><i class="ph ph-eye"></i></button>
+        </div>
+      </div>
+      
+      <div class="flex-between align-center mb-4 mt-2">
+        <label class="checkbox-label" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-color); cursor: pointer;">
+          <input type="checkbox" style="accent-color: var(--clr-primary); width: 16px; height: 16px;"> Remember me
+        </label>
+        <a href="#" style="font-size: 0.875rem; color: var(--clr-primary); font-weight: 500;">Forgot password?</a>
+      </div>
+      
+      <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 8px; padding: 0.8rem;">Sign In</button>
+    </form>
+    
+    <div class="divider">or</div>
+    
+    <div class="social-login-row">
+      <button class="btn btn-outline social-btn-horizontal">
+        <i class="ph ph-google-logo"></i> Google
+      </button>
+      <button class="btn btn-outline social-btn-horizontal">
+        <i class="ph ph-apple-logo"></i> Apple
+      </button>
+    </div>
+    
+    <p style="text-align: center; margin-top: 2rem; font-size: 0.875rem; color: var(--text-muted);">
+      Don't have an account? <a href="register.html" style="color: var(--clr-primary); font-weight: 500;">Register now</a>
+    </p>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top"><i class="ph ph-arrow-up"></i></button>
+</body>
+</html>

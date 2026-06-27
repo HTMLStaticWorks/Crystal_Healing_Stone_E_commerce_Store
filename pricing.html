@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Bundles - Lumina</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo" style="flex: 1;">
+        <a href="index.html"><i class="ph-fill ph-sparkle"></i> LUMINA</a>
+      </div>
+      
+      <nav class="desktop-menu" style="flex: 2; display: flex; justify-content: center;">
+        <ul class="menu-links" style="gap: 1.5rem; justify-content: center;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="home-2.html">Home 2</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="crystal-pairing-guide.html">Crystal Pairing</a></li>
+          <li><a href="pricing.html" class="active">Gift Sets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
+      </div>
+
+      <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <!-- Offcanvas Menu -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+  <aside class="offcanvas-menu" id="offcanvas-menu">
+    <div class="offcanvas-header">
+      <span class="logo"><i class="ph-fill ph-sparkle"></i> LUMINA</span>
+      <button class="close-btn" id="close-menu-btn" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="offcanvas-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home-2.html">Home 2</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="crystal-pairing-guide.html">Crystal Pairing</a></li>
+        <li><a href="pricing.html" class="active">Gift Sets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+        <div class="offcanvas-footer" style="padding: 2rem;">
+      <div class="offcanvas-actions" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+        <button id="mobile-theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+        <button id="mobile-rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">Login</a>
+    </div>
+  </aside>
+
+
+  
+
+  <!-- Section 1: Small Hero -->
+  <section class="section-alt small-hero" style="padding-top: 140px; padding-bottom: 80px;">
+    <div class="container text-center-md animate-on-scroll" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h1 >Premium Gift Sets</h1>
+      <p class="lead-text" style="color: var(--text-muted);">The perfect present for loved ones seeking balance and beauty.</p>
+    </div>
+  </section>
+
+  
+  <!-- Section 2: Gift Bundles -->
+  <section class="gift-bundles section-padding">
+    <div class="container animate-on-scroll">
+      <div class="text-center-md" style="text-align: center; margin-bottom: 3rem;">
+        <h2>Curated Gift Bundles</h2>
+        <p class="mb-4">Save up to 20% by purchasing intention-based sets.</p>
+      </div>
+      
+      <div class="premium-pricing-grid">
+        <!-- Card 1 -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>The Protection Kit</h3>
+            <div class="price"><span>$</span>85</div>
+            <p class="subtitle">For grounding & shielding</p>
+          </div>
+          <div class="pricing-body">
+            <ul class="pricing-features">
+              <li><i class="ph ph-check-circle"></i> Raw Black Tourmaline</li>
+              <li><i class="ph ph-check-circle"></i> Polished Obsidian</li>
+              <li><i class="ph ph-check-circle"></i> Clear Quartz Point</li>
+              <li><i class="ph ph-check-circle"></i> Intention Card Included</li>
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <a href="shop.html" class="btn btn-outline">Add Bundle</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Highlighted -->
+        <div class="pricing-card highlighted">
+          <div class="popular-badge">Most Popular</div>
+          <div class="pricing-header">
+            <h3>The Abundance Kit</h3>
+            <div class="price"><span>$</span>110</div>
+            <p class="subtitle">For wealth & manifestation</p>
+          </div>
+          <div class="pricing-body">
+            <ul class="pricing-features">
+              <li><i class="ph ph-check-circle"></i> Natural Citrine Cluster</li>
+              <li><i class="ph ph-check-circle"></i> Raw Pyrite Cube</li>
+              <li><i class="ph ph-check-circle"></i> Green Aventurine Tumbled</li>
+              <li><i class="ph ph-check-circle"></i> Velvet Storage Pouch</li>
+              <li><i class="ph ph-check-circle"></i> Intention Card Included</li>
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <a href="shop.html" class="btn btn-primary">Add Bundle</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>The Love Kit</h3>
+            <div class="price"><span>$</span>75</div>
+            <p class="subtitle">For harmony & compassion</p>
+          </div>
+          <div class="pricing-body">
+            <ul class="pricing-features">
+              <li><i class="ph ph-check-circle"></i> Raw Rose Quartz</li>
+              <li><i class="ph ph-check-circle"></i> Rhodonite Tumbled Stone</li>
+              <li><i class="ph ph-check-circle"></i> Amethyst Cluster</li>
+              <li><i class="ph ph-check-circle"></i> Intention Card Included</li>
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <a href="shop.html" class="btn btn-outline">Add Bundle</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Section 3: Subscriptions Overview -->
+  <section class="section-alt subscriptions-overview section-padding" >
+    <div class="container animate-on-scroll">
+      <div class="text-center-md" style="text-align: center; margin-bottom: 3rem;">
+        <h2>Gift Subscriptions</h2>
+        <p class="mb-4" style="color: var(--text-muted);">The gift that keeps giving: high-frequency energy delivered monthly.</p>
+      </div>
+      
+      <div class="subscription-grid flex-center wrap-md gap-4">
+        
+        <!-- Beginner Box -->
+        <div class="sub-card animate-on-scroll">
+          <div class="sub-header">
+            <h3>Beginner Box</h3>
+            <div class="price"><span>$</span>25<span>/mo</span></div>
+          </div>
+          <div class="sub-body">
+            <ul class="pricing-features">
+              <li><i class="ph ph-check-circle"></i> 1-2 polished stones</li>
+              <li><i class="ph ph-check-circle"></i> Detailed info & intention cards</li>
+              <li><i class="ph ph-check-circle"></i> Small sage or palo santo stick</li>
+            </ul>
+          </div>
+          <div class="sub-footer">
+            <a href="#" class="btn btn-outline">Gift Subscription</a>
+          </div>
+        </div>
+
+        <!-- Premium Box -->
+        <div class="sub-card premium-sub animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="sub-header">
+            <h3>Premium Box</h3>
+            <div class="price"><span>$</span>45<span>/mo</span></div>
+          </div>
+          <div class="sub-body">
+            <ul class="pricing-features">
+              <li><i class="ph ph-check-circle"></i> 3-4 premium raw & polished stones</li>
+              <li><i class="ph ph-check-circle"></i> 1 rare or museum-grade specimen</li>
+              <li><i class="ph ph-check-circle"></i> Premium incense bundle</li>
+              <li><i class="ph ph-check-circle"></i> Exclusive video meditation guides</li>
+            </ul>
+          </div>
+          <div class="sub-footer">
+            <a href="#" class="btn btn-primary">Gift Subscription</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Section 4: Corporate & Wellness Gifting (Merged) -->
+  <section class="section-alt corporate-gifting section-padding" >
+    <div class="container flex wrap-md align-stretch gap-4 animate-on-scroll">
+      
+      <!-- Left Side: Image -->
+      <div style="flex:1; min-height: 400px; display: flex;">
+        <img src="assets/images/premium_crystal_altar.png" alt="Corporate Gift Boxes" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+      </div>
+
+      <!-- Right Side: Content -->
+      <div class="corporate-content" style="flex:1; display: flex; flex-direction: column; justify-content: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Corporate Wellness Gifting</h2>
+        <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.1rem; margin-bottom: 2rem;">
+          Elevate your team's energy and wellbeing. Stock your boutique or gift your entire company with our premium curated boxes. We offer custom-branded intention sets perfect for corporate retreats and employee appreciation.
+        </p>
+        
+        <div class="bulk-tiers" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem;">Bulk Discount Tiers</h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: var(--text-color);"><i class="ph ph-check-circle" style="color: var(--clr-primary); font-size: 1.2rem;"></i> <strong>$500+ Order:</strong> 20% Off</li>
+            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: var(--text-color);"><i class="ph ph-check-circle" style="color: var(--clr-primary); font-size: 1.2rem;"></i> <strong>$1000+ Order:</strong> 30% Off</li>
+            <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-color);"><i class="ph ph-check-circle" style="color: var(--clr-primary); font-size: 1.2rem;"></i> <strong>$2500+ Order:</strong> 40% Off</li>
+          </ul>
+        </div>
+
+        <div>
+          <a href="contact.html" class="btn btn-primary">Request a Custom Catalog</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 5: Gifting FAQ -->
+  <section class="gifting-faq section-padding">
+    <div class="container animate-on-scroll">
+      <div class="text-center-md" style="text-align: center; margin-bottom: 3rem;">
+        <h2>Gifting FAQ</h2>
+        <p style="color: var(--text-muted);">Everything you need to know about gifting Lumina.</p>
+      </div>
+
+      <div class="gifting-accordion">
+        <div class="accordion-item">
+          <button class="accordion-toggle">
+            Can I include a personalized note?
+            <i class="ph ph-caret-down accordion-icon"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Absolutely. At checkout, simply select the "Add Gift Note" option and type your personalized message. We will handwrite it on our premium stationary and include it securely inside the box.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-toggle">
+            Do prices include shipping?
+            <i class="ph ph-caret-down accordion-icon"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Standard prices do not include shipping. However, we offer complimentary expedited shipping on all gift bundles over $100.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-toggle">
+            Can I mix and match bundles?
+            <i class="ph ph-caret-down accordion-icon"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Our bundles are heavily curated to offer the best synergistic energy and value. While you cannot swap out individual stones within a bundle, you are welcome to build a completely custom set at standard pricing.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-toggle">
+            Are the receipts hidden in gift boxes?
+            <i class="ph ph-caret-down accordion-icon"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Yes. We never include pricing information or physical invoices inside our shipping boxes. Your receipt will be emailed directly to you.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom: 1.5rem;">
+            <a href="index.html" style="font-size: 1.5rem;"><i class="ph-fill ph-sparkle"></i> LUMINA</a>
+          </div>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">Luxury healing crystals for the modern soul. We ethically source premium stones to elevate your daily rituals and align your energetic frequencies.</p>
+          <div class="social-links" style="display: flex; gap: 1rem;">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="crystal-pairing-guide.html">Pairing Guide</a></li>
+            <li><a href="#">Subscriptions</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="contact.html">Support</a></li>
+            <li><a href="contact.html">Store Location</a></li>
+            <li><a href="mailto:hello@lumina.com">hello@lumina.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumina. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top"><i class="ph ph-arrow-up"></i></button>
+</body>
+</html>

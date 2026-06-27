@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Lumina</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo" style="flex: 1;">
+        <a href="index.html"><i class="ph-fill ph-sparkle"></i> LUMINA</a>
+      </div>
+      
+      <nav class="desktop-menu" style="flex: 2; display: flex; justify-content: center;">
+        <ul class="menu-links" style="gap: 1.5rem; justify-content: center;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="home-2.html">Home 2</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="crystal-pairing-guide.html">Crystal Pairing</a></li>
+          <li><a href="pricing.html">Gift Sets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
+      </div>
+
+      <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <!-- Offcanvas Menu -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+  <aside class="offcanvas-menu" id="offcanvas-menu">
+    <div class="offcanvas-header">
+      <span class="logo"><i class="ph-fill ph-sparkle"></i> LUMINA</span>
+      <button class="close-btn" id="close-menu-btn" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="offcanvas-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home-2.html">Home 2</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="crystal-pairing-guide.html">Crystal Pairing</a></li>
+        <li><a href="pricing.html">Gift Sets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+        <div class="offcanvas-footer" style="padding: 2rem;">
+      <div class="offcanvas-actions" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+        <button id="mobile-theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+        <button id="mobile-rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">Login</a>
+    </div>
+  </aside>
+
+
+  <!-- Navbar -->
+      
+
+  <!-- Section 1: Small Hero Banner -->
+  <section class="section-alt small-hero" style="background-color: var(--clr-secondary); padding-top: 120px; padding-bottom: 60px;">
+    <div class="container text-center-md animate-on-scroll" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h1>The Crystal Collection</h1>
+      <p class="lead-text" style="color: var(--text-muted);">Ethically sourced, high-frequency natural stones.</p>
+    </div>
+  </section>
+
+  
+  <!-- Section 2: Shop Layout -->
+  <section class="shop-main-section section-padding">
+    <div class="container">
+      
+      <div class="mobile-filter-toolbar">
+        <button id="mobile-filter-btn" class="btn btn-outline"><i class="ph ph-faders"></i> Show Filters</button>
+        <div class="sort-group">
+          <select class="premium-select">
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="shop-layout">
+        
+        <!-- Left Sidebar (Filters) -->
+        <aside class="shop-sidebar" id="shop-sidebar">
+          <div class="sidebar-header">
+            <h3>Filters</h3>
+            <button class="close-filter-btn" id="close-filter-btn"><i class="ph ph-x"></i></button>
+          </div>
+          
+          <div class="filter-widget">
+            <h4>Category</h4>
+            <ul class="filter-list">
+              <li><label><input type="checkbox"> Raw Stones</label></li>
+              <li><label><input type="checkbox"> Polished Crystals</label></li>
+              <li><label><input type="checkbox"> Jewelry</label></li>
+              <li><label><input type="checkbox"> Gift Sets</label></li>
+            </ul>
+          </div>
+          
+          <div class="filter-widget">
+            <h4>Purpose</h4>
+            <ul class="filter-list">
+              <li><label><input type="checkbox"> Love & Harmony</label></li>
+              <li><label><input type="checkbox"> Wealth & Abundance</label></li>
+              <li><label><input type="checkbox"> Protection</label></li>
+              <li><label><input type="checkbox"> Healing & Peace</label></li>
+            </ul>
+          </div>
+
+          <div class="filter-widget">
+            <h4>Price Range</h4>
+            <ul class="filter-list">
+              <li><label><input type="checkbox"> Under $25</label></li>
+              <li><label><input type="checkbox"> $25 - $50</label></li>
+              <li><label><input type="checkbox"> $50 - $100</label></li>
+              <li><label><input type="checkbox"> Over $100</label></li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Right Content (Grid) -->
+        <div class="shop-products">
+          <div class="desktop-sort-toolbar hidden-mobile">
+            <p>Showing 1-18 of 54 products</p>
+            <div class="sort-group">
+              <span class="mr-2">Sort By:</span>
+              <select class="premium-select">
+                <option>Featured</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="premium-shop-grid">
+            
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.0s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/amethyst_cluster.png" alt="Amethyst Cluster">
+          </div>
+          <div class="card-body">
+            <h3>Amethyst Cluster</h3>
+            <p>Peace & Intuition</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$45.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/rose_quartz_collection.png" alt="Rose Quartz">
+          </div>
+          <div class="card-body">
+            <h3>Rose Quartz</h3>
+            <p>Unconditional Love</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$35.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/clear_quartz_point.png" alt="Clear Quartz Point">
+          </div>
+          <div class="card-body">
+            <h3>Clear Quartz Point</h3>
+            <p>Master Healer</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$28.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.0s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/abundance_box.png" alt="Citrine Cluster">
+          </div>
+          <div class="card-body">
+            <h3>Citrine Cluster</h3>
+            <p>Abundance & Wealth</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$65.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/black_tourmaline_stone.png" alt="Black Tourmaline">
+          </div>
+          <div class="card-body">
+            <h3>Black Tourmaline</h3>
+            <p>Protection & Grounding</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$22.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/mala_beads.png" alt="Mala Beads">
+          </div>
+          <div class="card-body">
+            <h3>Mala Beads</h3>
+            <p>Meditation Focus</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$55.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.0s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/amethyst_cluster.png" alt="Amethyst Cluster">
+          </div>
+          <div class="card-body">
+            <h3>Amethyst Cluster</h3>
+            <p>Peace & Intuition</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$45.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/rose_quartz_collection.png" alt="Rose Quartz">
+          </div>
+          <div class="card-body">
+            <h3>Rose Quartz</h3>
+            <p>Unconditional Love</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$35.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/clear_quartz_point.png" alt="Clear Quartz Point">
+          </div>
+          <div class="card-body">
+            <h3>Clear Quartz Point</h3>
+            <p>Master Healer</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$28.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.0s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/abundance_box.png" alt="Citrine Cluster">
+          </div>
+          <div class="card-body">
+            <h3>Citrine Cluster</h3>
+            <p>Abundance & Wealth</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$65.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/black_tourmaline_stone.png" alt="Black Tourmaline">
+          </div>
+          <div class="card-body">
+            <h3>Black Tourmaline</h3>
+            <p>Protection & Grounding</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$22.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/mala_beads.png" alt="Mala Beads">
+          </div>
+          <div class="card-body">
+            <h3>Mala Beads</h3>
+            <p>Meditation Focus</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$55.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.0s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/amethyst_cluster.png" alt="Amethyst Cluster">
+          </div>
+          <div class="card-body">
+            <h3>Amethyst Cluster</h3>
+            <p>Peace & Intuition</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$45.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/rose_quartz_collection.png" alt="Rose Quartz">
+          </div>
+          <div class="card-body">
+            <h3>Rose Quartz</h3>
+            <p>Unconditional Love</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$35.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/clear_quartz_point.png" alt="Clear Quartz Point">
+          </div>
+          <div class="card-body">
+            <h3>Clear Quartz Point</h3>
+            <p>Master Healer</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$28.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.0s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/abundance_box.png" alt="Citrine Cluster">
+          </div>
+          <div class="card-body">
+            <h3>Citrine Cluster</h3>
+            <p>Abundance & Wealth</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$65.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/black_tourmaline_stone.png" alt="Black Tourmaline">
+          </div>
+          <div class="card-body">
+            <h3>Black Tourmaline</h3>
+            <p>Protection & Grounding</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$22.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="crystal-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="card-img-wrapper">
+            <img src="assets/images/mala_beads.png" alt="Mala Beads">
+          </div>
+          <div class="card-body">
+            <h3>Mala Beads</h3>
+            <p>Meditation Focus</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$55.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+          </div>
+          
+          <!-- Pagination -->
+          <div class="pagination flex-center mt-4 pt-4 animate-on-scroll">
+            <button class="btn btn-outline mr-2"><i class="ph ph-caret-left"></i></button>
+            <button class="btn btn-primary mr-2">1</button>
+            <button class="btn btn-outline mr-2">2</button>
+            <button class="btn btn-outline mr-2">3</button>
+            <button class="btn btn-outline"><i class="ph ph-caret-right"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Promo Banner -->
+  <section class="section-alt promo-banner section-padding" >
+    <div class="container text-center-md animate-on-scroll" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h2 >Discover the Premium Reserve</h2>
+      <p style="margin: 1rem auto 2rem; max-width: 600px; color: var(--text-muted);">Our most exclusive, museum-grade specimens are available for a limited time.</p>
+      <a href="shop.html" class="btn btn-accent">Shop The Reserve</a>
+    </div>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom: 1.5rem;">
+            <a href="index.html" style="font-size: 1.5rem;"><i class="ph-fill ph-sparkle"></i> LUMINA</a>
+          </div>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">Luxury healing crystals for the modern soul. We ethically source premium stones to elevate your daily rituals and align your energetic frequencies.</p>
+          <div class="social-links" style="display: flex; gap: 1rem;">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html" class="active">Shop All</a></li>
+            <li><a href="crystal-pairing-guide.html">Pairing Guide</a></li>
+            <li><a href="#">Subscriptions</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="contact.html">Support</a></li>
+            <li><a href="contact.html">Store Location</a></li>
+            <li><a href="mailto:hello@lumina.com">hello@lumina.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumina. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top"><i class="ph ph-arrow-up"></i></button>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - Lumina</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .cart-layout {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .cart-items {
+      flex: 2;
+    }
+    .cart-summary {
+      flex: 1;
+      background-color: var(--clr-secondary);
+      padding: 2rem;
+      border-radius: 20px;
+      position: sticky;
+      top: 100px;
+    }
+    body.dark-mode .cart-summary {
+      background-color: var(--clr-dark-card);
+    }
+    .cart-item-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .cart-item-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      object-fit: cover;
+      background-color: var(--clr-secondary);
+    }
+    .cart-item-details {
+      flex: 1;
+    }
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .summary-total {
+      font-size: 1.25rem;
+      font-weight: 580;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 767px) {
+      .cart-layout {
+        flex-direction: column;
+      }
+      .cart-summary {
+        width: 100%;
+      }
+      .cart-item-row {
+        flex-wrap: wrap;
+      }
+      /* Fix promo code row alignment on mobile */
+      .promo-code-container > div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+      }
+      .promo-code-container input {
+        flex: 1;
+        min-width: 0;
+      }
+      .promo-code-container button {
+        flex-shrink: 0;
+        padding: 0.8rem 1rem !important;
+        white-space: nowrap;
+      }
+      /* You May Also Like: bigger images on mobile */
+      .related-products .card-img-wrapper {
+        height: 220px !important;
+        padding: 0 !important;
+      }
+      .related-products .card-img-wrapper img {
+        object-fit: cover !important;
+        height: 100% !important;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo" style="flex: 1;">
+        <a href="index.html"><i class="ph-fill ph-sparkle"></i> LUMINA</a>
+      </div>
+      
+      <nav class="desktop-menu" style="flex: 2; display: flex; justify-content: center;">
+        <ul class="menu-links" style="gap: 1.5rem; justify-content: center;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="home-2.html">Home 2</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="crystal-pairing-guide.html">Crystal Pairing</a></li>
+          <li><a href="pricing.html">Gift Sets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
+      </div>
+
+      <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <!-- Offcanvas Menu -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+  <aside class="offcanvas-menu" id="offcanvas-menu">
+    <div class="offcanvas-header">
+      <span class="logo"><i class="ph-fill ph-sparkle"></i> LUMINA</span>
+      <button class="close-btn" id="close-menu-btn" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="offcanvas-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home-2.html">Home 2</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="crystal-pairing-guide.html">Crystal Pairing</a></li>
+        <li><a href="pricing.html">Gift Sets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+        <div class="offcanvas-footer" style="padding: 2rem;">
+      <div class="offcanvas-actions" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+        <button id="mobile-theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+        <button id="mobile-rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">Login</a>
+    </div>
+  </aside>
+
+
+  
+
+  <!-- Section 1: Hero -->
+  <section class="section-alt small-hero" style="padding-top: 140px; padding-bottom: 60px;">
+    <div class="container text-center-md animate-on-scroll" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h1 >Your Cart</h1>
+    </div>
+  </section>
+
+  <!-- Section 2: Cart Layout -->
+  <section class="cart-section section-padding">
+    <div class="container animate-on-scroll">
+      <div class="cart-layout">
+        
+        <!-- Cart Items -->
+        <div class="cart-items">
+          
+          <!-- Shipping Progress Bar -->
+          <div class="shipping-progress-container mb-4">
+            <p class="shipping-message">You are <span class="font-weight-bold" style="color: var(--clr-primary);">$35.00</span> away from <strong>Free Shipping!</strong></p>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 75%;"></div>
+            </div>
+          </div>
+
+          <h3 class="mb-4">2 Items</h3>
+          
+          <div class="cart-item-row" data-unit-price="45">
+            <img src="assets/images/amethyst_cluster.png" alt="Amethyst" class="cart-item-img">
+            <div class="cart-item-details">
+              <h4>Raw Amethyst Cluster</h4>
+              <p class="text-muted" style="margin-top: 0.25rem;">Size: Medium</p>
+            </div>
+            <div class="cart-item-actions">
+              <div class="quantity-selector" style="display: flex; align-items: center; background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden;">
+                <button class="qty-btn" style="background: none; border: none; color: var(--text-color); padding: 0.5rem 0.8rem; cursor: pointer;"><i class="ph ph-minus"></i></button>
+                <span class="qty-value" style="padding: 0 0.5rem; font-weight: 550; width: 20px; text-align: center;">1</span>
+                <button class="qty-btn" style="background: none; border: none; color: var(--text-color); padding: 0.5rem 0.8rem; cursor: pointer;"><i class="ph ph-plus"></i></button>
+              </div>
+              <span class="font-weight-bold item-total">$45.00</span>
+              <button class="icon-btn" style="color: #E53935;"><i class="ph ph-trash"></i></button>
+            </div>
+          </div>
+          
+          <div class="cart-item-row" data-unit-price="35">
+            <img src="assets/images/rose_quartz_collection.png" alt="Rose Quartz" class="cart-item-img">
+            <div class="cart-item-details">
+              <h4>Rose Quartz Polish</h4>
+              <p class="text-muted" style="margin-top: 0.25rem;">Size: Small</p>
+            </div>
+            <div class="cart-item-actions">
+              <div class="quantity-selector" style="display: flex; align-items: center; background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden;">
+                <button class="qty-btn" style="background: none; border: none; color: var(--text-color); padding: 0.5rem 0.8rem; cursor: pointer;"><i class="ph ph-minus"></i></button>
+                <span class="qty-value" style="padding: 0 0.5rem; font-weight: 550; width: 20px; text-align: center;">2</span>
+                <button class="qty-btn" style="background: none; border: none; color: var(--text-color); padding: 0.5rem 0.8rem; cursor: pointer;"><i class="ph ph-plus"></i></button>
+              </div>
+              <span class="font-weight-bold item-total">$70.00</span>
+              <button class="icon-btn" style="color: #E53935;"><i class="ph ph-trash"></i></button>
+            </div>
+          </div>
+          
+          <div style="margin-top: 2rem;">
+            <a href="shop.html" class="btn btn-outline"><i class="ph ph-arrow-left"></i> Continue Shopping</a>
+          </div>
+        </div>
+        
+        <!-- Order Summary -->
+        <div class="cart-summary">
+          <h3 class="mb-4">Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span class="font-weight-bold" id="cart-subtotal">$115.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>Calculated at checkout</span>
+          </div>
+          <div class="summary-row summary-total">
+            <span>Total</span>
+            <span id="cart-total">$115.00</span>
+          </div>
+          
+          <!-- Promo Code -->
+          <div class="promo-code-container mt-3">
+            <div style="display: flex; gap: 0.5rem;">
+              <input type="text" placeholder="Promo code" class="premium-select" style="flex: 1; padding: 0.8rem; border-radius: 8px;">
+              <button class="btn btn-outline" style="padding: 0.8rem 1.5rem;">Apply</button>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">Proceed to Checkout</button>
+          
+          <div class="flex-center mt-4 gap-2" style="font-size: 1.2rem;">
+            <i class="ph ph-lock-key" style="color: var(--clr-primary);"></i> Secure Checkout
+          </div>
+          
+          <!-- Trust Badges -->
+          <div class="trust-badges mt-4">
+            <div class="trust-badge">
+              <i class="ph ph-globe-hemisphere-west"></i>
+              <span>Ethically Sourced</span>
+            </div>
+            <div class="trust-badge">
+              <i class="ph ph-leaf"></i>
+              <span>Carbon Neutral</span>
+            </div>
+            <div class="trust-badge">
+              <i class="ph ph-arrow-u-up-left"></i>
+              <span>30-Day Returns</span>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: You May Also Like -->
+  <section class="section-alt related-products section-padding" style="border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container animate-on-scroll">
+      <h2 class="mb-4 text-center-md" style="text-align: center; ">You May Also Like</h2>
+      
+      <div class="premium-shop-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 3rem;">
+        
+        <div class="crystal-card">
+          <div class="card-img-wrapper" style="background-color: var(--clr-secondary); padding: 2rem;">
+            <img src="assets/images/smudge_kit.png" alt="Premium Smudge Kit" style="object-fit: contain;">
+          </div>
+          <div class="card-body">
+            <h3 style="font-size: 1.2rem;">Premium Smudge Kit</h3>
+            <p>Cleanse & Protect</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$32.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="crystal-card">
+          <div class="card-img-wrapper" style="background-color: var(--clr-secondary); padding: 2rem;">
+            <img src="assets/images/clear_quartz_point.png" alt="Clear Quartz Point" style="object-fit: contain;">
+          </div>
+          <div class="card-body">
+            <h3 style="font-size: 1.2rem;">Clear Quartz Point</h3>
+            <p>Master Healer</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$28.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="crystal-card">
+          <div class="card-img-wrapper" style="background-color: var(--clr-secondary); padding: 2rem;">
+            <img src="assets/images/mala_beads.png" alt="Mala Beads" style="object-fit: contain;">
+          </div>
+          <div class="card-body">
+            <h3 style="font-size: 1.2rem;">Amethyst Mala Beads</h3>
+            <p>Meditation Focus</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$55.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="crystal-card">
+          <div class="card-img-wrapper" style="background-color: var(--clr-secondary); padding: 2rem;">
+            <img src="assets/images/black_tourmaline_stone.png" alt="Black Tourmaline" style="object-fit: contain;">
+          </div>
+          <div class="card-body">
+            <h3 style="font-size: 1.2rem;">Black Tourmaline</h3>
+            <p>Grounding Energy</p>
+            <div class="flex-between align-center mt-2">
+              <span class="font-weight-bold" style="font-size: 1.25rem;">$22.00</span>
+              <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Add</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom: 1.5rem;">
+            <a href="index.html" style="font-size: 1.5rem;"><i class="ph-fill ph-sparkle"></i> LUMINA</a>
+          </div>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">Luxury healing crystals for the modern soul. We ethically source premium stones to elevate your daily rituals and align your energetic frequencies.</p>
+          <div class="social-links" style="display: flex; gap: 1rem;">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="crystal-pairing-guide.html">Pairing Guide</a></li>
+            <li><a href="#">Subscriptions</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="contact.html">Support</a></li>
+            <li><a href="contact.html">Store Location</a></li>
+            <li><a href="mailto:hello@lumina.com">hello@lumina.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumina. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top"><i class="ph ph-arrow-up"></i></button>
+</body>
+</html>

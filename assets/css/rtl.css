@@ -1,0 +1,70 @@
+/*
+ * Crystal & Healing Stone E-commerce Store
+ * RTL Styles
+ */
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Base resets for RTL */
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+/* Navbar / Offcanvas menu */
+html[dir="rtl"] .offcanvas-menu {
+  right: auto;
+  left: -320px;
+}
+
+html[dir="rtl"] .offcanvas-menu.active {
+  left: 0;
+  right: auto;
+}
+
+/* Margin and Padding utilities for RTL */
+html[dir="rtl"] .ml-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+html[dir="rtl"] .mr-auto {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+html[dir="rtl"] .pr-2 {
+  padding-right: 0 !important;
+  padding-left: 0.5rem !important;
+}
+
+html[dir="rtl"] .pl-2 {
+  padding-left: 0 !important;
+  padding-right: 0.5rem !important;
+}
+
+/* Flexbox reversing for elements that need logical direction */
+/* Standard flex-row is generally handled by browser naturally when dir="rtl",
+   but explicit offsets or borders need reversing */
+
+html[dir="rtl"] .border-right {
+  border-right: none !important;
+  border-left: 1px solid var(--border-color) !important;
+}
+
+/* --- Auth Page RTL Adjustments --- */
+html[dir="rtl"] .auth-floating-actions {
+  right: auto;
+  left: 1.5rem;
+}
+
+html[dir="rtl"] .password-toggle-btn {
+  right: auto;
+  left: 10px;
+}
+
+html[dir="rtl"] .password-input-wrapper input {
+  padding-right: 1rem;
+  padding-left: 3rem;
+}

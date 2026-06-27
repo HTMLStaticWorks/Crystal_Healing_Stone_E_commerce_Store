@@ -1,0 +1,192 @@
+
+/* Cinematic Preloader Overlay */
+.cinematic-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #05020a;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.cinematic-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(138,43,226,0.15) 0%, rgba(0,0,0,0) 70%);
+  z-index: 1;
+  animation: pulseGlow 4s infinite alternate ease-in-out;
+}
+
+.central-crystal {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  height: 400px;
+  background: url('../images/diamond_crystal.png') center/contain no-repeat;
+  filter: drop-shadow(0 0 20px rgba(138,43,226,0.5)) brightness(1.2) contrast(1.2);
+  transform: scale(0.5);
+  opacity: 0;
+  animation: crystalForm 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards, crystalVibrate 0.2s 0.2s infinite linear;
+
+  mix-blend-mode: screen;}
+
+.central-crystal.hidden {
+  display: none;
+}
+
+.shards-container {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.crystal-shard {
+  position: absolute;
+  background: url('../images/diamond_crystal.png') no-repeat;
+  /* Background size is dynamically set in JS to match crystal size */
+  will-change: transform, opacity;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
+
+  mix-blend-mode: screen;}
+
+/* Animations */
+@keyframes pulseGlow {
+  0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes crystalForm {
+  0% { transform: scale(0.1) rotate(-10deg); opacity: 0; filter: drop-shadow(0 0 0px rgba(138,43,226,0)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 50px rgba(138,43,226,0.8)) brightness(1.5); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; filter: drop-shadow(0 0 30px rgba(138,43,226,0.6)) brightness(1.2); }
+}
+
+@keyframes crystalVibrate {
+  0% { transform: scale(1) translate(0, 0); filter: brightness(1.2); }
+  25% { transform: scale(1.02) translate(2px, -2px); filter: brightness(1.8); }
+  50% { transform: scale(1) translate(-2px, 2px); filter: brightness(1.2); }
+  75% { transform: scale(1.02) translate(2px, 2px); filter: brightness(1.8); }
+  100% { transform: scale(1) translate(0, 0); filter: brightness(1.2); }
+}
+
+/* Typography Animation Sequence */
+.cinematic-hidden .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(5px);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cinematic-revealed .word {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.cinematic-revealed .w1 { transition-delay: 0.1s; }
+.cinematic-revealed .w2 { transition-delay: 0.1s; color: rgba(255,255,255,0.9); text-shadow: 0 0 20px rgba(255,255,255,0.3); }
+.cinematic-revealed .w3 { transition-delay: 0.3s; }
+.cinematic-revealed .w4 { transition-delay: 0.4s; }
+.cinematic-revealed .w5 { 
+  transition-delay: 0.5s; 
+  color: var(--clr-primary);
+  text-shadow: 0 0 30px var(--clr-primary);
+  animation: finalWordGlow 1.0s 0.6s forwards;
+}
+
+@keyframes finalWordGlow {
+  0% { text-shadow: 0 0 30px var(--clr-primary); }
+  50% { text-shadow: 0 0 80px var(--clr-primary), 0 0 120px rgba(255,255,255,0.8); }
+  100% { text-shadow: 0 0 15px var(--clr-primary); }
+}
+
+/* Hero Content Reveal */
+.hero-home-1 .hero-content {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.1s;
+}
+
+.hero-home-1.cinematic-active .hero-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-home-1 .hero-cta {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease 0.7s;
+}
+
+.hero-home-1.cinematic-active .hero-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Base styles to support the background */
+.hero-home-1 {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 160px 0 80px;
+}
+
+@media (max-width: 1024px) {
+  .hero-home-1 {
+    min-height: auto !important; /* Do not force viewport height on mobile */
+    padding: 180px 0 100px !important;
+    text-align: center;
+  }
+  
+  .hero-home-1 h1 {
+    font-size: 3rem !important;
+    line-height: 1.1;
+  }
+  
+  .hero-home-1 .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to right, rgba(15,12,25,0.9) 0%, rgba(15,12,25,0.4) 100%);
+  z-index: 1;
+}
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  filter: brightness(0.7) contrast(1.1);
+}

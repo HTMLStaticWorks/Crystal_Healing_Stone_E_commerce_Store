@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crystal - Constellation Universe</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    /* Fix selection color globally */
+    ::selection { background-color: var(--clr-primary); }
+    ::-moz-selection { background-color: var(--clr-primary); }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body class="home-v2">
+
+<header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo" style="flex: 1;">
+        <a href="index.html"><i class="ph-fill ph-sparkle"></i> LUMINA</a>
+      </div>
+      
+      <nav class="desktop-menu" style="flex: 2; display: flex; justify-content: center;">
+        <ul class="menu-links" style="gap: 1.5rem; justify-content: center;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="home-2.html" class="active">Home 2</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="crystal-pairing-guide.html">Crystal Pairing</a></li>
+          <li><a href="pricing.html">Gift Sets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="menu-actions" style="flex: 1; display: flex; justify-content: flex-end;">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="cart.html" class="icon-btn" aria-label="Cart"><i class="ph ph-shopping-cart"></i></a>
+        <a href="login.html" class="btn btn-primary login-btn" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Login</a>
+      </div>
+
+      <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <!-- Offcanvas Menu -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+  <aside class="offcanvas-menu" id="offcanvas-menu">
+    <div class="offcanvas-header">
+      <span class="logo"><i class="ph-fill ph-sparkle"></i> LUMINA</span>
+      <button class="close-btn" id="close-menu-btn" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="offcanvas-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home-2.html" class="active">Home 2</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="crystal-pairing-guide.html">Crystal Pairing</a></li>
+        <li><a href="pricing.html">Gift Sets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+        <div class="offcanvas-footer" style="padding: 2rem;">
+      <div class="offcanvas-actions" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+        <button id="mobile-theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+        <button id="mobile-rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+          <i class="ph ph-shopping-cart"></i>
+          <span class="cart-badge" style="position: absolute; top: -5px; right: -5px; background: var(--clr-primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">Login</a>
+    </div>
+  </aside>
+
+
+  <!-- Navbar -->
+      
+
+  <!-- Hero Section: Constellation Crystal Universe (Split Layout) -->
+  <section class="home-2-hero">
+    
+    <!-- Left Side: Text Content -->
+    <div class="hero-text-side" style="display: flex; flex-direction: column; justify-content: center; padding: 4rem 10%; background-color: var(--bg-color);">
+      <h1 style="color: var(--text-color); margin-bottom: 1.5rem; text-align: left; line-height: 1.1;">Explore The Constellation Crystal Universe</h1>
+      <p class="lead-text" style="color: var(--text-muted); margin-bottom: 2.5rem; text-align: left; font-size: 1.1rem; max-width: 90%;">Journey through celestial energies and discover the cosmic alignments of our most powerful stones.</p>
+      <div style="text-align: left;">
+        <a href="shop.html" class="btn btn-primary">Enter The Universe</a>
+      </div>
+    </div>
+
+    <!-- Right Side: Image & Orbs -->
+    <div class="hero-image-side" style="position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+      <img src="assets/images/home_2_hero.png" alt="Constellation Universe" style="width: 80%; max-width: 450px; height: auto; object-fit: contain; position: relative; z-index: 2; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(109,94,245,0.15) 0%, var(--clr-dark-bg) 80%); z-index: 1;"></div>
+      
+      <!-- Orbs -->
+      <div style="position: absolute; border-radius: 50%; background-color: var(--clr-primary); box-shadow: 0 0 20px var(--clr-primary), 0 0 40px var(--clr-primary); opacity: 0.6; width: 10px; height: 10px; top: 20%; left: 30%; animation: floatOrb 8s infinite alternate ease-in-out;"></div>
+      <div style="position: absolute; border-radius: 50%; background-color: var(--clr-primary); box-shadow: 0 0 20px var(--clr-primary), 0 0 40px var(--clr-primary); opacity: 0.6; width: 15px; height: 15px; top: 60%; left: 70%; animation: floatOrb 12s infinite alternate-reverse ease-in-out;"></div>
+      <div style="position: absolute; border-radius: 50%; background-color: var(--clr-primary); box-shadow: 0 0 20px var(--clr-primary), 0 0 40px var(--clr-primary); opacity: 0.6; width: 8px; height: 8px; top: 80%; left: 40%; animation: floatOrb 10s infinite alternate ease-in-out;"></div>
+    </div>
+  </section>
+
+  <!-- Section 1: Chakra Collection (Interactive Layout) -->
+  <section class="section-alt chakra-collection section-padding" >
+    <div class="container text-center-md animate-on-scroll" style="text-align: center; margin-bottom: 3rem;">
+      <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 1rem;">Align Your Chakras</h2>
+      <p style="max-width: 600px; margin: 0 auto; color: var(--clr-accent); font-size: 1.25rem;">Explore the seven energy centers and their healing stones.</p>
+    </div>
+    
+    <div class="container">
+      <div class="chakra-interactive-layout animate-on-scroll">
+        
+        <!-- Left Side: Celestial Visual -->
+        <div class="chakra-visual-container">
+          <div class="chakra-image-wrapper">
+            <img src="assets/images/celestial_chakra_silhouette.png" alt="Celestial Chakra Meditation">
+            <div class="cosmic-glow"></div>
+          </div>
+        </div>
+        
+        <!-- Right Side: Interactive Accordion -->
+        <div class="chakra-accordion-container">
+          
+          <div class="chakra-accordion-item" style="--chakra-color: #E53935;">
+            <div class="chakra-header">
+              <div class="chakra-icon"></div>
+              <h3>Root Chakra <span class="chakra-sanskrit">(Muladhara)</span></h3>
+              <i class="ph ph-caret-down toggle-icon"></i>
+            </div>
+            <div class="chakra-content">
+              <p><strong>Energy:</strong> Grounding, survival, and physical identity.</p>
+              <p><strong>Blocked Signs:</strong> Anxiety, fear, feeling unmoored.</p>
+              <p><strong>Healing Stone:</strong> <a href="shop.html?crystal=black-tourmaline" class="crystal-link">Black Tourmaline</a></p>
+            </div>
+          </div>
+          
+          <div class="chakra-accordion-item" style="--chakra-color: #FB8C00;">
+            <div class="chakra-header">
+              <div class="chakra-icon"></div>
+              <h3>Sacral Chakra <span class="chakra-sanskrit">(Svadhisthana)</span></h3>
+              <i class="ph ph-caret-down toggle-icon"></i>
+            </div>
+            <div class="chakra-content">
+              <p><strong>Energy:</strong> Creativity, passion, and emotional balance.</p>
+              <p><strong>Blocked Signs:</strong> Creative block, emotional isolation.</p>
+              <p><strong>Healing Stone:</strong> <a href="shop.html?crystal=carnelian" class="crystal-link">Carnelian</a></p>
+            </div>
+          </div>
+          
+          <div class="chakra-accordion-item" style="--chakra-color: #FDD835;">
+            <div class="chakra-header">
+              <div class="chakra-icon"></div>
+              <h3>Solar Plexus <span class="chakra-sanskrit">(Manipura)</span></h3>
+              <i class="ph ph-caret-down toggle-icon"></i>
+            </div>
+            <div class="chakra-content">
+              <p><strong>Energy:</strong> Personal power, confidence, and willpower.</p>
+              <p><strong>Blocked Signs:</strong> Low self-esteem, lack of direction.</p>
+              <p><strong>Healing Stone:</strong> <a href="shop.html?crystal=citrine" class="crystal-link">Citrine</a></p>
+            </div>
+          </div>
+          
+          <div class="chakra-accordion-item" style="--chakra-color: #43A047;">
+            <div class="chakra-header">
+              <div class="chakra-icon"></div>
+              <h3>Heart Chakra <span class="chakra-sanskrit">(Anahata)</span></h3>
+              <i class="ph ph-caret-down toggle-icon"></i>
+            </div>
+            <div class="chakra-content">
+              <p><strong>Energy:</strong> Love, compassion, and deep connection.</p>
+              <p><strong>Blocked Signs:</strong> Trust issues, holding grudges.</p>
+              <p><strong>Healing Stone:</strong> <a href="shop.html?crystal=rose-quartz" class="crystal-link">Rose Quartz</a></p>
+            </div>
+          </div>
+          
+          <div class="chakra-accordion-item" style="--chakra-color: #1E88E5;">
+            <div class="chakra-header">
+              <div class="chakra-icon"></div>
+              <h3>Throat Chakra <span class="chakra-sanskrit">(Vishuddha)</span></h3>
+              <i class="ph ph-caret-down toggle-icon"></i>
+            </div>
+            <div class="chakra-content">
+              <p><strong>Energy:</strong> Communication, truth, and self-expression.</p>
+              <p><strong>Blocked Signs:</strong> Fear of speaking up, social anxiety.</p>
+              <p><strong>Healing Stone:</strong> <a href="shop.html?crystal=lapis-lazuli" class="crystal-link">Lapis Lazuli</a></p>
+            </div>
+          </div>
+          
+          <div class="chakra-accordion-item" style="--chakra-color: #3949AB;">
+            <div class="chakra-header">
+              <div class="chakra-icon"></div>
+              <h3>Third Eye <span class="chakra-sanskrit">(Ajna)</span></h3>
+              <i class="ph ph-caret-down toggle-icon"></i>
+            </div>
+            <div class="chakra-content">
+              <p><strong>Energy:</strong> Intuition, imagination, and inner wisdom.</p>
+              <p><strong>Blocked Signs:</strong> Brain fog, lack of intuition.</p>
+              <p><strong>Healing Stone:</strong> <a href="shop.html?crystal=amethyst" class="crystal-link">Amethyst</a></p>
+            </div>
+          </div>
+          
+          <div class="chakra-accordion-item" style="--chakra-color: #8E24AA;">
+            <div class="chakra-header">
+              <div class="chakra-icon"></div>
+              <h3>Crown Chakra <span class="chakra-sanskrit">(Sahasrara)</span></h3>
+              <i class="ph ph-caret-down toggle-icon"></i>
+            </div>
+            <div class="chakra-content">
+              <p><strong>Energy:</strong> Spiritual connection and divine consciousness.</p>
+              <p><strong>Blocked Signs:</strong> Disconnection from reality, apathy.</p>
+              <p><strong>Healing Stone:</strong> <a href="shop.html?crystal=clear-quartz" class="crystal-link">Clear Quartz</a></p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Crystal Pairing Guide -->
+  <section class="section-alt pairing-guide-preview section-padding" >
+    <div class="container">
+      <div class="pairing-layout flex-center-md">
+        <div class="pairing-text animate-on-scroll">
+          <h2 >The Art of Crystal Pairing</h2>
+          <p style="color: var(--text-muted); font-size: 1.125rem;">Magnify intentions by combining the right energies. Learn how Amethyst and Rose Quartz synergize to create a sanctuary of peace and love.</p>
+          <a href="crystal-pairing-guide.html" class="btn btn-outline mt-4" style="border-color: rgba(255,255,255,0.3);">View The Guide</a>
+        </div>
+        <div class="pairing-visual animate-on-scroll">
+          <div class="pairing-card left">
+             <img src="assets/images/amethyst_cluster.png" alt="Amethyst">
+          </div>
+          <div class="pairing-icon"><i class="ph ph-plus"></i></div>
+          <div class="pairing-card right">
+             <img src="assets/images/rose_quartz_collection.png" alt="Rose Quartz">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Meditation Essentials (Premium Grid) -->
+  <section class="section-alt meditation-essentials section-padding" >
+    <div class="container animate-on-scroll" style="text-align: center; margin-bottom: 4rem;">
+      <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 1rem;">Meditation Essentials</h2>
+      <p style="max-width: 600px; margin: 0 auto; color: var(--clr-accent); font-size: 1.25rem;">Elevate your practice with these premium tools.</p>
+    </div>
+    
+    <div class="container">
+      <div class="premium-gallery-grid">
+        
+        <!-- Item 1 -->
+        <div class="gallery-card animate-on-scroll">
+          <div class="gallery-img-wrapper">
+            <img src="assets/images/amethyst_cluster.png" alt="Altar Clusters">
+          </div>
+          <div class="gallery-card-content">
+            <h3>Altar Clusters</h3>
+            <p>Anchor your sacred space with raw geode energy.</p>
+            <a href="shop.html?category=clusters" class="gallery-link">Shop Clusters</a>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="gallery-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="gallery-img-wrapper">
+            <img src="assets/images/rose_quartz_collection.png" alt="Palm Stones">
+          </div>
+          <div class="gallery-card-content">
+            <h3>Palm Stones</h3>
+            <p>Polished crystals for tactile grounding during meditation.</p>
+            <a href="shop.html?category=palm-stones" class="gallery-link">Shop Palm Stones</a>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="gallery-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="gallery-img-wrapper">
+            <img src="assets/images/mala_beads.png" alt="Mala Beads">
+          </div>
+          <div class="gallery-card-content">
+            <h3>Mala Beads</h3>
+            <p>High-frequency bead necklaces for mantra counting.</p>
+            <a href="shop.html?category=mala" class="gallery-link">Shop Mala Beads</a>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="gallery-card animate-on-scroll" style="transition-delay: 0.3s;">
+          <div class="gallery-img-wrapper">
+            <img src="assets/images/smudge_kit.png" alt="Smudge Ritual Kits">
+          </div>
+          <div class="gallery-card-content">
+            <h3>Smudge Kits</h3>
+            <p>Sacred sage and palo santo to clear negative energy.</p>
+            <a href="shop.html?category=smudge" class="gallery-link">Shop Smudge Kits</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Gift Box Collection (Premium Showcase) -->
+  <section class="section-alt gift-box-section section-padding" >
+    <div class="container animate-on-scroll" style="text-align: center; margin-bottom: 4rem;">
+      <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 1rem;">Curated Gift Boxes</h2>
+      <p style="max-width: 600px; margin: 0 auto; color: var(--clr-accent); font-size: 1.25rem;">The perfect present for loved ones seeking balance and beauty.</p>
+    </div>
+    
+    <div class="container">
+      <div class="premium-gift-grid">
+        
+        <!-- Box 1 -->
+        <div class="gift-showcase-card animate-on-scroll">
+          <div class="gift-img-wrapper">
+            <img src="assets/images/abundance_box.png" alt="The Abundance Box">
+            <div class="gift-overlay">
+              <a href="shop.html?box=abundance" class="btn btn-primary gift-btn">Shop Now</a>
+            </div>
+          </div>
+          <div class="gift-showcase-content">
+            <h3>The Abundance Box</h3>
+            <p>Citrine, Pyrite, Green Aventurine</p>
+          </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="gift-showcase-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="gift-img-wrapper">
+            <img src="assets/images/love_box.png" alt="The Love & Harmony Box">
+            <div class="gift-overlay">
+              <a href="shop.html?box=love" class="btn btn-primary gift-btn">Shop Now</a>
+            </div>
+          </div>
+          <div class="gift-showcase-content">
+            <h3>The Love & Harmony Box</h3>
+            <p>Rose Quartz, Rhodonite, Clear Quartz</p>
+          </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="gift-showcase-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="gift-img-wrapper">
+            <img src="assets/images/healing_box.png" alt="The Deep Healing Box">
+            <div class="gift-overlay">
+              <a href="shop.html?box=healing" class="btn btn-primary gift-btn">Shop Now</a>
+            </div>
+          </div>
+          <div class="gift-showcase-content">
+            <h3>The Deep Healing Box</h3>
+            <p>Amethyst, Black Tourmaline, Selenite</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Monthly Crystal Club -->
+  <section class="crystal-club-banner section-padding" style="background: linear-gradient(135deg, var(--clr-primary), #483d8b); text-align: center;">
+    <div class="container animate-on-scroll">
+      <h2 >Monthly Crystal Club</h2>
+      <p style="max-width: 600px; margin: 1rem auto; font-size: 1.25rem; color: rgba(255,255,255,0.9);">Join our exclusive community and receive hand-selected stones every month.</p>
+      <a href="#" class="btn btn-outline mt-4" style="border-background: rgba(255,255,255,0.1);">Become a Member</a>
+    </div>
+  </section>
+
+  <!-- Section 6: Wellness Journal Highlights (Animated Layout) -->
+  <section class="section-alt journal-highlights section-padding" >
+    <div class="container animate-on-scroll" style="text-align: center; margin-bottom: 4rem;">
+      <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 1rem;">Wellness Journal Highlights</h2>
+      <p style="max-width: 600px; margin: 0 auto; color: var(--clr-accent); font-size: 1.25rem;">Insights on living a high-vibe lifestyle.</p>
+    </div>
+    
+    <div class="container">
+      <div class="premium-journal-grid">
+        
+        <!-- Article 1 -->
+        <a href="blog.html?id=moonlight-cleanse" class="journal-feature-card animate-on-scroll" style="text-decoration: none;">
+          <div class="journal-img-wrapper">
+            <img src="assets/images/blog_moonlight.png" alt="Moonlight Cleansing">
+            <div class="journal-tag">Education</div>
+          </div>
+          <div class="journal-feature-content">
+            <h3>How to Cleanse Your Crystals with Moonlight</h3>
+            <div class="journal-read-more">Read Article <i class="ph ph-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="blog.html?id=sleep-crystals" class="journal-feature-card animate-on-scroll" style="transition-delay: 0.1s; text-decoration: none;">
+          <div class="journal-img-wrapper">
+            <img src="assets/images/blog_sleep.png" alt="Crystals for Sleep">
+            <div class="journal-tag" style="background-color: var(--clr-secondary); color: var(--clr-dark-bg);">Meditation</div>
+          </div>
+          <div class="journal-feature-content">
+            <h3>5 Crystals for Better Sleep and Deep Rest</h3>
+            <div class="journal-read-more">Read Article <i class="ph ph-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Article 3 -->
+        <a href="blog.html?id=manifesting-citrine" class="journal-feature-card animate-on-scroll" style="transition-delay: 0.2s; text-decoration: none;">
+          <div class="journal-img-wrapper">
+            <img src="assets/images/intention_setting_crystals.png" alt="Manifesting with Citrine">
+            <div class="journal-tag" style="background-color: var(--clr-primary); ">Manifestation</div>
+          </div>
+          <div class="journal-feature-content">
+            <h3>The Ultimate Guide to Manifesting with Crystals</h3>
+            <div class="journal-read-more">Read Article <i class="ph ph-arrow-right"></i></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom: 1.5rem;">
+            <a href="index.html" style="font-size: 1.5rem;"><i class="ph-fill ph-sparkle"></i> LUMINA</a>
+          </div>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">Luxury healing crystals for the modern soul. We ethically source premium stones to elevate your daily rituals and align your energetic frequencies.</p>
+          <div class="social-links" style="display: flex; gap: 1rem;">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+            <a href="#" class="social-icon" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="crystal-pairing-guide.html">Pairing Guide</a></li>
+            <li><a href="#">Subscriptions</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="contact.html">Support</a></li>
+            <li><a href="contact.html">Store Location</a></li>
+            <li><a href="mailto:hello@lumina.com">hello@lumina.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumina. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top"><i class="ph ph-arrow-up"></i></button>
+</body>
+</html>
