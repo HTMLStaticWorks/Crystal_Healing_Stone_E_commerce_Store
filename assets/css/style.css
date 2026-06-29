@@ -3796,7 +3796,7 @@ section.home-2-hero {
   min-height: 100vh;
   align-items: stretch;
   background-color: var(--bg-color);
-  padding: 0 !important; /* Reset padding to let columns handle it */
+  padding: 80px 0 0 !important; /* Offset navbar to perfectly center content */
   margin: 0;
 }
 
@@ -4121,13 +4121,13 @@ section.home-2-hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 160px 0 80px;
+  padding: 80px 0 0;
 }
 
 @media (max-width: 1024px) {
   .hero-home-1 {
     min-height: auto !important; /* Do not force viewport height on mobile */
-    padding: 180px 0 100px !important;
+    padding: 100px 0 60px !important;
     text-align: center;
   }
   
