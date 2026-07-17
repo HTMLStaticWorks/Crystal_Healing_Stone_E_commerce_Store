@@ -1,4 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <rect width="256" height="256" fill="none"/>
-  <path d="M239.1,114.6l-68.5-30.8a16.1,16.1,0,0,1-8.1-8.1L131.6,7.1a15.8,15.8,0,0,0-29.2,0L71.5,75.6a16.1,16.1,0,0,1-8.1,8.1L-5.1,114.6a15.8,15.8,0,0,0,0,29.2l68.5,30.8a16.1,16.1,0,0,1,8.1,8.1l30.8,68.5a15.8,15.8,0,0,0,29.2,0l30.8-68.5a16.1,16.1,0,0,1,8.1-8.1l68.5-30.8A15.8,15.8,0,0,0,239.1,114.6Z" fill="#6D4CFF"/>
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 2L2 10L12 22L22 10L12 2Z" fill="url(#lumina-grad-main)" stroke="#6D5EF5" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M2 10H22M12 2V22" stroke="#6D5EF5" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M7 10L12 2L17 10" stroke="#6D5EF5" stroke-width="1.5" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="lumina-grad-main" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6D5EF5" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#C89D3D" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
 </svg>

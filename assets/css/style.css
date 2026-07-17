@@ -1573,7 +1573,7 @@ body.dark-mode .premium-select {
 }
 
 .ritual-subtitle {
-  color: var(--clr-accent);
+  color: var(--text-color);
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
   font-weight: 400;
@@ -1660,8 +1660,8 @@ body.dark-mode .premium-select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  width: 250px;
+  cursor: default; /* Since they aren't purely hover-interactions anymore */
+  width: 280px;
 }
 
 .chakra-orb {
@@ -1709,16 +1709,14 @@ body.dark-mode .premium-select {
 
 /* The Hidden Data Card */
 .chakra-card {
-  position: absolute;
-  top: 90px;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  width: 280px;
-  opacity: 0;
-  visibility: hidden;
+  position: relative;
+  margin-top: 1rem;
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 10;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 /* Glassmorphism specifically for this card */
@@ -1763,12 +1761,7 @@ body.dark-mode .premium-select {
   transform: scale(1.15) translateY(-10px);
 }
 
-.chakra-item:hover .chakra-card {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-  pointer-events: auto;
-}
+/* Hover Interaction for orb only now */
 
 
 
@@ -4162,4 +4155,26 @@ section.home-2-hero {
   object-fit: cover;
   opacity: 0.8;
   filter: brightness(0.7) contrast(1.1);
+}
+
+
+/* Hero CTA Group */
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .hero-cta-group {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
 }
